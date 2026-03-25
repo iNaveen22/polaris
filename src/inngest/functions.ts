@@ -18,7 +18,7 @@ export const demoGenerate = inngest.createFunction(
         const scrapedContent = await step.run("scrape-urls", async () => {
             if (urls.length === 0) return null;
 
-            const results = await Promise.all (
+            const results = await Promise.all(
                 urls.map(async (url) => {
                     const result = await firecrawl.scrape(
                         url,
@@ -36,6 +36,11 @@ export const demoGenerate = inngest.createFunction(
             const { text } = await generateText({
                 model: google("gemini-2.5-flash"),
                 prompt: finalPrompt,
+                experimental_telemetry: {
+                    isEnabled: true,
+                    recordInputs: true,
+                    recordOutputs: true
+                }
             });
             return text;
         });
