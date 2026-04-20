@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { Spinner } from "@/components/ui/spinner";
 
 import { getItemPadding } from "./constants";
-import { number } from "zod/v4";
 
 export const LoadingRow = ({
     className,
