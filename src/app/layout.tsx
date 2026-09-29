@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { Providers } from "@/components/providers";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Providers>
           <TooltipProvider>
             {children}
+            <Toaster />
           </TooltipProvider>
         </Providers>
       </body>
